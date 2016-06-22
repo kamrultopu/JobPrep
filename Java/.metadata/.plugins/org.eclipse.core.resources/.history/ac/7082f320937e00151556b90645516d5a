@@ -1,0 +1,54 @@
+package Problem;
+
+import java.util.Arrays;
+
+
+
+public class Solver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int test = lengthOfLongestSubstring("abcbcdef");
+		System.out.println(test);
+		
+	}
+	public static int lengthOfLongestSubstring(String s) {
+        int[] check = new int[512];
+        int longest = 0;
+        int size = s.length();
+        //s=s.toUpperCase();
+        Arrays.fill(check, -1);
+        int max = 0;
+        String temp = "";
+        String result = "";
+        int startingPoint = -1;
+        int i;
+        for(i = 0; i< size;i++ ){
+        	int pos = s.charAt(i);
+        	//System.out.println(pos);
+        	if(check[pos] > 0){
+        		//System.out.println("in if ");
+        		Arrays.fill(check,0);
+        		if(longest > max){
+        			max = longest;
+        			result = temp;
+        		}
+    			temp ="";
+    			longest = i - startingPoint;
+    			startingPoint = check[pos]+1;
+        	}
+        	check[pos]=i;
+        	temp = temp+s.charAt(i);
+        	//System.out.println(temp);
+        }
+        i--;
+        longest = i - startingPoint;
+        if( longest > max){
+        	max = longest;
+        	result = temp;
+        }
+        //System.out.println(result);
+        return max;
+    }
+
+}

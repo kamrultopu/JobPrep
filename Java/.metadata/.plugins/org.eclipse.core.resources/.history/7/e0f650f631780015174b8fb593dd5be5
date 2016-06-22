@@ -1,0 +1,19 @@
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = 1;
+		int[] list = new int[50];
+		for(int l:list){
+			l = a++;
+			System.out.println(l);
+		}
+		System.out.println("Traversing");
+		for(int l:list){
+			System.out.print(l+" ");
+		}
+		
+	}
+
+}

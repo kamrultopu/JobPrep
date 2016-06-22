@@ -1,0 +1,52 @@
+import java.util.Arrays;
+
+
+public class Interview {
+	
+	public static void main(String[] args) {
+		
+	
+		
+		LeetCodeSolution ls = new LeetCodeSolution();
+		String Str = "xabce";
+		String pat = "abc";
+		System.out.println(ls.strStr(Str, pat));
+		
+		/*System.out.println(LeetCodeSolution.LongestSubStringWithTwodisChar("aaaaabc"));
+		LeetCodeSolution ls = new LeetCodeSolution();
+		MyString ms = new MyString();
+		//System.out.println(ms.strStr("abacabdef", "ab"));
+		
+		AdvancedAlgorithm aa = new AdvancedAlgorithm();
+		System.out.println(aa.RabinKarp("bbcdxbcdaaaabcde", "bcd"));
+		
+		
+		String str = "$#";
+		Palindrome pd = new Palindrome(str);
+		System.out.println(pd.isPalindrome());
+		int[] testArray = {1,2,3,4,5};
+		int target = 7;
+		Sorting.BubbleSort(testArray);
+		System.out.println(Arrays.toString(testArray));
+		System.out.println(Arrays.toString(ls.twoPointerTwoSum(testArray, target)));
+		//System.out.println(Searching.BinarySearch(testArray, 4));
+		// TODO Auto-generated method stub
+		int[] randtestArray = {14,6,9,4,1,8,20,15,17};
+		int[] sortedArray = { 1,2,3,4,5};
+		int[] revsortedArray = { 5,4,3,2,1};
+		int[] almostSortedArray = { 2,3,4,5,1};
+		System.out.println("Randome Array " + Arrays.toString(randtestArray));
+		Sorting.heapSort(randtestArray);
+		System.out.println(Arrays.toString(randtestArray));*/
+		/*System.out.println("sortedArray Array");
+		Sorting.mergeSort(sortedArray);
+		System.out.println(Arrays.toString(sortedArray));
+		System.out.println("revsortedArray Array");
+		Sorting.mergeSort(revsortedArray);
+		System.out.println(Arrays.toString(revsortedArray));
+		System.out.println("almostSortedArray Array");
+		Sorting.mergeSort(almostSortedArray);
+		System.out.println(Arrays.toString(almostSortedArray));*/
+	}
+
+}

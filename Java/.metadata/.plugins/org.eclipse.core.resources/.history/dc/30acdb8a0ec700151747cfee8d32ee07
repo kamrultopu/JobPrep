@@ -1,0 +1,58 @@
+
+public class KMP {
+	int[] lps;
+	public void initialize(String str){
+		int size = str.length();
+		lps = new int[size];
+		lps[0] = 0;
+		int len = 0;
+		int i = 1;
+		while(i<size){
+			if( str.charAt(i) == str.charAt(len)){
+				len++;
+				lps[i] = len;
+				i++;
+			}
+			else{
+				if( len != 0){
+					len = lps[len-1];
+				}
+				else{
+					lps[i] = 0;
+					i++;
+				}
+			}
+			
+		}
+	}
+	
+	public int KMPSearch(String haystack, String needle){
+		initialize(needle);
+		int sizeHay = haystack.length();
+		int sizeneed = needle.length();
+		int i = 0 ; 
+		int j = 0 ;
+		int index = -1;
+		while(i<sizeHay){
+			if( haystack.charAt(i) == needle.charAt(j)){
+				i++;
+				j++;
+			}
+			if( j == sizeneed){
+				index = i-j;
+				break;
+			}
+			else if ( i<sizeneed && haystack.charAt(i)!= needle.charAt(j)){
+				System.out.println("hi");
+				if( j!= 0){
+					j = lps[j-1];
+				}
+				else{
+					i = i+1;
+				}
+			}
+		}
+		return index;
+	}
+
+}

@@ -1,0 +1,40 @@
+import java.util.Random;
+import java.util.Arrays;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//int a = 1;
+		Random rd = new Random();
+		int[] list = new int[15];
+		for(int i = 0;i<10;i++){
+			list[i] = rd.nextInt(100);
+		}
+		
+		System.out.println("Traversing");
+		for(int i:list){
+			System.out.print(i + " ");
+		}
+		System.out.println("Search");
+		int target = rd.nextInt(100);
+		boolean flag = false;
+		int k = 0,pos=0;
+		for(int i:list){
+			if(target == i){
+				flag = true;
+				pos = k;
+			}
+			k++;
+		}
+		if(flag){
+			System.out.println("found in place: " + pos);
+		}
+		else{
+			System.out.println("not found ");
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,301 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+
+public class LeetCodeSolution {
+	public static final boolean DEV_MODE = true;
+	public int[] twoSum(int[] nums,int target){
+		int size = nums.length;
+		int[] result ={-1,-1};
+		HashMap<Integer, ArrayList<Integer>> map = new HashMap<Integer,ArrayList<Integer>>();
+		for( int i = 0 ; i < size; i++){
+			ArrayList<Integer> tempList;
+			if( map.containsKey(nums[i])){
+				tempList = map.get(nums[i]);
+				tempList.add(i+1);
+			}
+			else{
+				tempList = new ArrayList<Integer>();
+				tempList.add(i+1);
+				map.put(nums[i], tempList);
+			}
+		}
+		if(DEV_MODE){
+			for( Integer i:map.keySet()){
+				System.out.println(" key: " + i + ", Arrays: "+ map.get(i).toString());
+			}
+		}
+		for( int i = 0; i < size; i++){
+			int needVal = target - nums[i];
+			if( map.containsKey(needVal)){
+				ArrayList<Integer> tempList = map.get(needVal);
+				if( tempList.get(0) == (i+1) && tempList.size()<2){
+					continue;
+				}
+				result[0] = i + 1 ;
+				result[1] = tempList.get(tempList.size()-1);
+				break;
+			}
+		}
+		return result;
+	}
+	public int[] sortedTwoSum(int[] nums, int target){
+		int[] result = {-1,-1};
+		int size = nums.length;
+		for( int i = 0 ; i< size ; i++){
+			int needVal = target - nums[i];
+			int pos = Searching.BinarySearch(nums, needVal);
+			if( pos > -1 && pos != i){
+				result[0] = i+1;
+				result[1] = pos + 1;
+				break;
+			}
+		}
+		return result;
+	}
+	public int[] twoPointerTwoSum(int[] nums, int target){
+		int[] result = {-1,-1};
+		int size = nums.length;
+		int hi = size - 1; 
+		int lo = 0;
+		while(lo < hi){
+			int sum = nums[lo] + nums[hi];
+			if( sum == target){
+				result[0] = lo + 1;
+				result[1] = hi + 1;
+				break;
+			}
+			else if( sum > target ){
+				hi--;
+			}
+			else {
+				lo++;
+			}
+		}
+		return result;
+	}
+	
+	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int size1 = nums1.length;
+        int size2 = nums2.length;
+        double median = 0;
+        double med1 = getMedian(nums1);
+        double  med2 = getMedian(nums2);
+        if( med1 == med2){
+        	median = med1;
+        }
+        else if (med1 > med2){
+        	int j, k;
+        	j = size1/2 - 1;
+        	k = size2/2 - 1;
+        	int shift = 0 ; 
+        	int inbalanceCount = 0;
+        	for( int i = size2/2;i < size2; i++){
+        		if( nums2[i] > med1){
+        			break;
+        		}
+        		inbalanceCount++;
+        		k++;
+        	}
+        	shift = inbalanceCount/2;
+        	int flag = 1;
+        	for( int i = 0 ; i < shift ; i++){
+        		if( nums2[k] > nums1[j]){
+        			k--;
+        			flag = 2;
+        		}
+        		else{
+        			j--;
+        			flag = 1;
+        		}
+        	}
+        	if(flag == 1){
+        		median = nums1[j];
+        	}
+        	else{
+        		median = nums2[k];
+        	}
+        }
+        else{
+        	
+        }
+        return median;
+    }
+	private double getMedian(int[] nums){
+		int size = nums.length;
+		int mid = size/2;
+		int res = 0;
+		if( size%2 == 0 ){
+			res = (nums[mid]+nums[mid+1])/2;
+		}
+		else {
+			res = nums[mid];
+		}
+		return res;
+	}
+	
+	public static boolean validateNumber(String str){
+		str = str.trim();
+		int size = str.length();
+		if( size == 0)
+		    return false;
+		boolean result = true;
+		boolean expoFlag = true;
+		boolean initFlag = true;
+		boolean pointFlag = false;
+		boolean isBase = false;
+		boolean isPower = false;
+		for( int i = 0 ; i < size ; i++){
+			//System.out.println("i" + str.charAt(i));
+			if( !Character.isDigit(str.charAt(i) )){
+				if ( str.charAt(i) == 'e' || str.charAt(i) == 'E'){
+					if( expoFlag || (i == size-1) || !isBase) {
+						result = false;
+						break;
+					}
+					else {
+						expoFlag = true;
+						initFlag = true; 
+						isBase = false;
+					}
+				}
+				else if ( str.charAt(i) == '.' ){
+					//System.out.println("i");
+				    if( pointFlag || (size == 1)|| (i==size-1 && expoFlag && !isBase && !isPower)){
+				        if( i < size-1){
+				        	
+				        }
+				    	result = false;
+				        break;
+				    }
+				    else{
+				        pointFlag = true;
+				    }
+				}
+				else if( !initFlag  ){
+					result = false;
+					break;
+				}
+				else if ( str.charAt(i) == '+' || str.charAt(i) == '-'){
+					initFlag = false;
+				} 
+				else {
+					result = false;
+					break;
+				}
+			}
+			else {
+				isBase = true;
+				if(pointFlag){
+					isPower = true;
+				}
+			}   
+			initFlag = false; 
+			if(i == 0)
+				expoFlag = false;
+		}
+		return result;
+	}
+	public static int lengthoflongestsubstring(String s){
+		HashMap<Character,Integer> hmap = new HashMap<Character,Integer>();
+		int size = s.length();
+		int longest = 0;
+		int start = 0;
+		int end = 0;
+		int length = 0;
+		//System.out.println(size);
+		for( int i = 0 ; i < size ; i++){
+			char ch = s.charAt(i);
+			int pos = -1;
+			if(hmap.containsKey(ch ))
+				pos = hmap.get(ch);
+			if(pos >= start){
+				end = i - 1;
+				length = end - start + 1;
+				if( length > longest)
+					longest = length;
+				start = hmap.get(ch) + 1;
+				hmap.put(ch, i);
+				//System.out.println(hmap.toString());
+			}
+			else{
+				hmap.put(ch, i);
+			}
+			if( i == size-1 ){
+				end = i;
+				//System.out.println(hmap.toString() + "start : " + start + "end "+ end);
+				length = end - start + 1;
+				
+				if( length > longest)
+					longest = length;
+			}
+		}
+		return longest;
+	}
+
+	public static int LongestSubStringWithTwodisChar(String str){
+		int size = str.length();
+		int longest = -1;
+		int start = 0;
+		int newStart = -1;
+		int end = 0;
+		int disChar = 0;
+		for(int i = 1 ; i < size; i++){
+			if(str.charAt(i) == str.charAt(i-1))
+				continue;
+			if( newStart >=0 && str.charAt(newStart) != str.charAt(i) ){
+				longest = Math.max(i-start, longest);
+				start = newStart + 1;
+			}
+			newStart = i-1;
+		}
+		return longest>(size-start)?longest:(size-start);
+	}
+
+	
+	
+	public static int atoi(String str){
+		str = str.trim();
+		int size = str.length();
+		int retVal = 0 ;
+		if( size == 0)
+			return retVal;
+		boolean flag = false;
+		if(str.charAt(0)=='-')
+			flag = true;
+		//int flagPrev = Integer.MAX_VALUE;
+		
+		for( int i = 0 ; i < size;i++){
+			if( !Character.isDigit(str.charAt(i)) ){
+				if( i==0 && (str.charAt(i) == '+' || str.charAt(i) == '-'))
+					continue;
+				break; 
+			}
+			int charVal = str.charAt(i) - 48;
+			int temp = 10 * retVal + charVal;
+			//System.out.println(temp);
+			if( retVal >214748363){
+				if( (retVal == 214748364) && charVal < 8 ){
+					retVal = temp;
+				}
+				else {
+					if(flag)
+						retVal = Integer.MIN_VALUE;
+					else
+						retVal = Integer.MAX_VALUE;
+					flag = false;
+				}
+				
+				break;
+			}
+			else{
+				retVal = temp;
+			}
+		}
+		if(flag) {
+			retVal = retVal * -1;
+		}
+		return retVal;
+	}
+}

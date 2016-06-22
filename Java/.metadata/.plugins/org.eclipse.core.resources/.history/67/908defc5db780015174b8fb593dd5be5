@@ -1,0 +1,82 @@
+import java.util.Arrays;
+import java.util.Random;
+
+/**
+ * 
+ */
+
+/**
+ * @author mki
+ *
+ */
+public class MyArray {
+	int arraySize ;
+	int[] list;
+	MyArray(){
+		arraySize = 100;
+		list = new int[arraySize];
+	}
+	MyArray(int n){
+		arraySize = n;
+		list = new int[arraySize];
+	}
+	public void RandomList(int bound){
+		Random rd = new Random();
+		for(int i = 0; i< arraySize; i++){
+			list[i] = rd.nextInt(bound);
+		}
+	}
+	public void listAssign(int[] glist){
+		for(int i = 0 ; i < arraySize; i++){
+			list[i] = glist[i];
+		}
+	}
+	public void Traverse(){
+		for(int i:list){
+			System.out.print(i+" ");
+		}
+		System.out.println("\n");
+	}
+	public void Sort(){
+		Arrays.sort(list);
+	}
+	public int Search(int target){
+		int[] tempList = Arrays.copyOf(list, arraySize);
+		Arrays.sort(tempList);
+		int pos = Arrays.binarySearch(tempList, target);
+		return pos;
+	}
+	public boolean insert(int target, int pos){
+		if(pos < 0 || pos > arraySize){
+			return false;
+		}
+		int[] temporaryList = new int[arraySize];
+		temporaryList = Arrays.copyOf(list, arraySize);
+		arraySize++;
+		list = null;
+		list = new int[arraySize];
+		list = Arrays.copyOf(temporaryList, arraySize-1);
+		for(int i = arraySize - 2; i> pos ; i--){
+			list[i] = list[i-1];
+		}
+		list[pos] = target;
+		return true;
+	}
+	public boolean delete(int target){
+		int pos = Search(target);
+		if(pos < 0){
+			return false;
+		}
+		else{
+			if( pos == arraySize - 1){
+				list[pos] = 0;
+			}
+			else{
+				for(int i = pos;i<arraySize-1;i++){
+					list[i] = list[i+1];
+				}
+			}
+		}
+		return true;
+	}
+}

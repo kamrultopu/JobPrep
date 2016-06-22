@@ -1,0 +1,16 @@
+
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		MyArray test = new MyArray(10);
+		test.RandomList(100);
+		test.Traverse();
+		test.Search(36);
+		test.insert(25, 5);
+		test.Traverse();
+		test.delete(43);
+		test.Traverse();
+	}
+}
+

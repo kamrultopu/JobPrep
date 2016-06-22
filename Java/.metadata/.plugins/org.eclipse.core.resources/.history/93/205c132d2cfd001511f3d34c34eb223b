@@ -1,0 +1,110 @@
+package Problem;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+class ArrayNumber implements Comparable<ArrayNumber>{
+	ArrayList<Integer> nums;
+	int size;
+	ArrayNumber(ArrayList<Integer> temp){
+		nums = (ArrayList<Integer>) temp.clone();
+		size = nums.size();
+	}
+	@Override
+	public int compareTo(ArrayNumber o) {
+		if( this.size == o.size ){
+			for( int i = 0 ; i < this.size; i++ ){
+				if( this.nums.get(i) != o.nums.get(i)){
+					return this.nums.get(i) - o.nums.get(i);
+				}
+			}
+			return 0;
+		}
+		return this.size - o.size;
+	}
+	@Override
+	public String toString() {
+		return "ArrayNumber [nums=" + nums + "]";
+	}
+	
+}
+
+
+public class Bignumber{
+	int[] array;
+	int   sizeOfArray;
+	HashMap<Integer,ArrayNumber> maxList = new HashMap<Integer,ArrayNumber>();
+	Bignumber(int[] nums){
+		array = nums.clone();
+		sizeOfArray = nums.length;
+		int size = nums.length;
+		maxList.put(0, new ArrayNumber(new ArrayList<Integer>()));
+		for( int i = 1; i <= size ; i++ ){
+			if( !maxList.containsKey(i)){
+				maxList.put(i, new ArrayNumber(SetBigNumberForLengthK(0,size - 1,i)));
+			}
+			
+		}
+		System.out.println(maxList.toString());
+	}
+	public ArrayList<Integer> SetBigNumberForLengthK(int start, int end, int length){
+		ArrayList<Integer> temp = null;
+		int need = length;
+		if( need == 1 ){
+			temp = new ArrayList<Integer>();
+			int pos = FindMaxPos(start,end);
+			temp.add(pos);
+			return temp;
+		}
+		int size = end - start + 1;
+		ArrayList<Integer> newTemp = null;
+		if( size == length ){
+			newTemp = new ArrayList<Integer>();
+			for( int i = start; i <=end; i++){
+				newTemp.add(i);
+			}
+			return newTemp;
+		}
+		temp = maxList.get(length - 1).nums;
+		
+		newTemp = (ArrayList<Integer>) temp.clone();
+		
+		
+		for( int i = newTemp.size() - 1 ; i >= 0 ;i--){
+			int last = newTemp.get(i);
+			if( last < start || last+need > end){
+				newTemp.remove(i);
+				need++;
+			}
+			else{
+				break;
+			}
+		}
+		if( newTemp.isEmpty()){
+			int last = end-length + 1;
+			int pos = FindMaxPos(start,last);
+			newTemp.add(pos);
+			
+		}
+		need = length - newTemp.size();
+		int lastIndex = newTemp.get(newTemp.size() - 1);
+		newTemp.addAll(SetBigNumberForLengthK(lastIndex + 1, end,need));
+		return newTemp;
+	}
+	private int FindMaxPos(int start, int end) {
+		int index = start;
+		int max = array[index];
+		
+		for( int i = start + 1; i<=end; i++){
+			if( max < array[i]){
+				max = array[i];
+				index = i;
+			}
+		}
+		return index;
+	}
+	
+	
+	
+}

@@ -1,0 +1,65 @@
+18:09:12 **** Rebuild of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -o Test.exe "src\\Test.o" 
+Info: Nothing to build for Test
+18:12:00 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:15:8: warning: unused variable 'f1' [-Wunused-variable]
+..\src\Test.cpp:16:8: warning: unused variable 'f2' [-Wunused-variable]
+g++ -o Test.exe "src\\Test.o" 
+18:16:08 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:15:8: warning: unused variable 'f1' [-Wunused-variable]
+..\src\Test.cpp:16:8: warning: unused variable 'f2' [-Wunused-variable]
+g++ -lm -o Test.exe "src\\Test.o" 
+18:16:22 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -lm -o Test.exe "src\\Test.o" 
+18:16:51 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:17:7: warning: unused variable 'b' [-Wunused-variable]
+g++ -lm -o Test.exe "src\\Test.o" 
+18:17:14 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:26:2: error: expected ';' before '}' token
+..\src\Test.cpp:17:7: warning: unused variable 'b' [-Wunused-variable]
+18:17:21 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:17:7: warning: unused variable 'b' [-Wunused-variable]
+g++ -lm -o Test.exe "src\\Test.o" 
+18:17:36 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:17:7: warning: unused variable 'b' [-Wunused-variable]
+g++ -lm -o Test.exe "src\\Test.o" 
+18:17:50 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp: In function 'int main()':
+..\src\Test.cpp:17:7: warning: unused variable 'b' [-Wunused-variable]
+g++ -lm -o Test.exe "src\\Test.o" 
+00:12:29 **** Clean-only build of configuration Debug for project Test ****
+rm -rf src/Test.d src/Test.o Test.exe 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Program Files (x86)\CodeBlocks\MinGW\bin;\bin;C:/Program Files/Java/jre1.8.0_60/bin/server;C:/Program Files/Java/jre1.8.0_60/bin;C:/Program Files/Java/jre1.8.0_60/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files\Java\jdk1.8.0_60\bin\;C:\Program Files\Bitcoin;C:\Program Files\Bitcoin\daemon;C:\Program Files\nodejs\;C:\Anaconda;C:\Anaconda\Scripts;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\lib\geth-stable\tools\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Ruby22\bin;C:\Users\misty\AppData\Roaming\npm;C:\eclipse]
+
+00:12:30 **** Clean-only build of configuration Debug for project Test ****
+19:20:02 **** Rebuild of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -lm -o "src\\Test.o" "..\\src\\Test.cpp" 
+Command canceled

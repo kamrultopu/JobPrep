@@ -1,0 +1,28 @@
+
+public class KMP {
+	int[] lps;
+	public initialize(String str){
+		int size = str.length();
+		lps = new int[size];
+		lps[0] = 0;
+		int len = 0;
+		int i = 1;
+		while(i<size){
+			if( str.charAt(i) == str.charAt(len)){
+				len++;
+				lps[i] = len;
+				i++;
+			}
+			else{
+				if( len != 0){
+					len = lps[len-1];
+				}
+				else{
+					lps[i] = 0;
+					i++;
+				}
+			}
+			
+		}
+	}
+}

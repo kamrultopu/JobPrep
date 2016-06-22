@@ -1,0 +1,7 @@
+
+public class InterviewPrep {
+	public static void main(String[] args){
+		CareerCup ccup = new CareerCup();
+		System.out.println(ccup.Permute("abc").toString());
+	}
+}

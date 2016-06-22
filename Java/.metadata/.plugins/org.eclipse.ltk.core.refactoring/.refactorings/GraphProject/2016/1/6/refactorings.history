@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;GraphProject/src/DirectedGraph.java&apos; to &apos;GraphDirection.java&apos;" description="Rename resource &apos;DirectedGraph.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DirectedGraph.java" name="GraphDirection.java" stamp="1454205835165" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;GraphProject/src/Graph.java&apos; to &apos;DirectedGraph.java&apos;" description="Rename resource &apos;Graph.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Graph.java" name="DirectedGraph.java" stamp="1454205871301" updateReferences="true"/>
+</session>

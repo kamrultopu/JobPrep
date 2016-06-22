@@ -1,0 +1,9 @@
+
+public class InterviewPrep {
+	public static void main(String[] args){
+		CareerCup ccup = new CareerCup();
+		int[] arr1={3,11,17,25,58,73};
+		int[] arr2 = { 6,18,40,47};
+		System.out.println(ccup.MergeRangeArray(arr1, arr2).toString());
+	}
+}

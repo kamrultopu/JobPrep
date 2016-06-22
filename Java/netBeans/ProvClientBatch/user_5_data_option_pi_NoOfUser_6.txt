@@ -1,0 +1,28 @@
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 500, No of user: 5
+Option = pi; time = 187954
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 1000, No of user: 5
+Option = pi; time = 374295
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 1500, No of user: 5
+Option = pi; time = 538016
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 2000, No of user: 5
+Option = pi; time = 724663
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 2500, No of user: 5
+Option = pi; time = 1019653
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 3000, No of user: 5
+Option = pi; time = 849675
+setup = C:\Users\misty\params.properties
+C:\Users\misty\sample_data.csv
+Username: user_5, No of record: 500, No of user: 5
+Option = pi; time = 156120
