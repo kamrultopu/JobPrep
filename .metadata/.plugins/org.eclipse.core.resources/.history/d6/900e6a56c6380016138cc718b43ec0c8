@@ -1,0 +1,13 @@
+import linkedlist.DoubleLinkedList;
+import linkedlist.Node;
+
+public class Main {
+	public static void main(String[] args){
+		DoubleLinkedList myLinkedList = new DoubleLinkedList(new Node(5));
+		myLinkedList.InsertLast(new Node(7));
+		myLinkedList.InsertFirst(new Node(3));
+		myLinkedList.InsertLast(new Node(10));
+		myLinkedList.InsertPosition(new Node(8), 30);
+		myLinkedList.Traverse();
+	}
+}

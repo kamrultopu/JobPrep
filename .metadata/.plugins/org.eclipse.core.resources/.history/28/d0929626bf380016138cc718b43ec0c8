@@ -1,0 +1,11 @@
+import linkedlist.Node;
+import linkedlist.SingleLinkedList;
+
+public class Main {
+	public static void main(String[] args){
+		SingleLinkedList myLinkedList = new SingleLinkedList(new Node(5));
+		myLinkedList.InsertLast(new Node(7));
+		myLinkedList.InsertLast(new Node(10));
+		myLinkedList.Traverse();
+	}
+}

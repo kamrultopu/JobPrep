@@ -1,0 +1,37 @@
+package linkedlist;
+
+public class SingleLinkedList implements LinkedList {
+	Node head;
+	public SingleLinkedList(Node head){
+		this.head = head;
+	}
+	@Override
+	public void Traverse() {
+		Node temp = head;
+		System.out.print("[");
+		while( temp != null ){
+			System.out.print(temp.val + " ");
+			temp = temp.next;
+		}
+		System.out.print("]");
+	}
+
+	@Override
+	public void Insert(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean Search(int key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

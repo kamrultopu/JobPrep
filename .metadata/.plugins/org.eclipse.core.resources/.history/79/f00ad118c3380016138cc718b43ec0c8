@@ -1,0 +1,15 @@
+package linkedlist;
+
+public abstract class LinkedList {
+	public void Traverse(){
+		
+	}
+	public boolean Search(int key){
+		
+	}
+	public abstract void InsertLast(Node newNode);
+	public abstract void InsertFirst(Node newNode);
+	public abstract void InsertPosition(Node newNode, int Pos);
+	public abstract void Remove(int key);
+	
+}

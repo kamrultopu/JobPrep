@@ -1,0 +1,35 @@
+package linkedlist;
+
+public class DoubleLinkedList extends LinkedList{
+	Node head;
+	Node lastNode;
+	
+	public DoubleLinkedList(Node head) {
+		super(head);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void InsertLast(Node newNode) {
+		lastNode.next = newNode;
+		newNode.prev = lastNode;
+		lastNode = newNode;
+		
+	}
+	@Override
+	public void InsertFirst(Node newNode) {
+		newNode.next = head;
+		head.prev = newNode;
+		head = newNode;
+	}
+	@Override
+	public void InsertPosition(Node newNode, int Pos) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+}

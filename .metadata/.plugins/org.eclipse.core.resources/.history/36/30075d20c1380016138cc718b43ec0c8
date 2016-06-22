@@ -1,0 +1,42 @@
+package linkedlist;
+
+public class DoubleLinkedList exetends LinkedList{
+	Node head;
+	Node lastNode;
+	@Override
+	public void Traverse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void InsertLast(Node newNode) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void InsertFirst(Node newNode) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void InsertPosition(Node newNode, int Pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean Search(int key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

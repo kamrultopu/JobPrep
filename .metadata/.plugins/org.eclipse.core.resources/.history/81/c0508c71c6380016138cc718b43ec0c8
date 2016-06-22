@@ -1,0 +1,29 @@
+package linkedlist;
+
+public class CircularLinkedList extends LinkedList {
+
+	@Override
+	public void InsertLast(Node newNode) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void InsertFirst(Node newNode) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void InsertPosition(Node newNode, int Pos) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package linkedlist;
+
+public class SingleLinkedList implements LinkedList {
+
+	@Override
+	public void Traverse() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Insert(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean Search(int key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

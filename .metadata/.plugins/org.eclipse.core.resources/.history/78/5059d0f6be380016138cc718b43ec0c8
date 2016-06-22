@@ -1,0 +1,10 @@
+package linkedlist;
+
+public interface LinkedList {
+	public void Traverse();
+	public void InsertLast(int key);
+	public void InsertFirst(int key);
+	public void InsertPosition(int key, int Pos);
+	public void Remove(int key);
+	public boolean Search(int key);
+}

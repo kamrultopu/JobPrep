@@ -1,0 +1,52 @@
+package linkedlist;
+
+public class SingleLinkedList implements LinkedList {
+	Node head;
+	Node lastNode;
+	public SingleLinkedList(Node head){
+		this.head = head;
+		lastNode = head;
+	}
+	@Override
+	public void Traverse() {
+		Node temp = head;
+		System.out.print("[");
+		while( temp != null ){
+			System.out.print(temp.val );
+			temp = temp.next;
+			if( temp != null ){
+				System.out.print(" ");
+			}
+		}
+		System.out.print("]");
+	}
+
+	
+
+	@Override
+	public void Remove(int key) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean Search(int key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public void InsertLast(Node newNode) {
+		lastNode.next = newNode;
+		lastNode = newNode;
+	}
+	@Override
+	public void InsertFirst(Node newNode) {
+		newNode.next = head;
+		head = newNode;
+	}
+	@Override
+	public void InsertPosition(Node newNode, int Pos) {
+		
+	}
+
+}
